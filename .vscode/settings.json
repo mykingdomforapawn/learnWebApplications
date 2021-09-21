@@ -1,6 +1,7 @@
 {
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
-        "c:\\Users\\Ludwig\\Downloads\\courserajava.jar"
+        "c:\\Users\\Ludwig\\Downloads\\courserajava.jar",
+        "javaSandbox/coursera_javaProgramming_solvingProblemsWithSoftware/resources/courserajava.jar"
     ]
 }
