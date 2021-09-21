@@ -7,9 +7,6 @@ import edu.duke.FileResource;
 import edu.duke.Point;
 import edu.duke.Shape;
 
-/**
- * PerimeterRunner
- */
 public class PerimeterAssignmentRunner {
 
     public double getParimeter(Shape s) {
@@ -28,6 +25,7 @@ public class PerimeterAssignmentRunner {
         int numPoints = 0;
 
         for (Point currPt : s.getPoints()) {
+            Point temo = currPt;
             numPoints++;
         }
         return numPoints;
