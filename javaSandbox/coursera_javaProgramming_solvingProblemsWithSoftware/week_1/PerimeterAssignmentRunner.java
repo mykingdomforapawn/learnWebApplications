@@ -25,8 +25,9 @@ public class PerimeterAssignmentRunner {
         int numPoints = 0;
 
         for (Point currPt : s.getPoints()) {
-            Point temo = currPt;
-            numPoints++;
+            if (currPt instanceof Point) {
+                numPoints++;
+            }
         }
         return numPoints;
     }
@@ -124,8 +125,8 @@ public class PerimeterAssignmentRunner {
 
     public static void main(String[] args) {
         PerimeterAssignmentRunner pr = new PerimeterAssignmentRunner();
-        // pr.testPerimeter();
+        pr.testPerimeter();
         // pr.testPerimeterMultipleFiles();
-        pr.testFileWithLargestPerimeter();
+        // pr.testFileWithLargestPerimeter();
     }
 }
