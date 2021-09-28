@@ -9,7 +9,7 @@ public class StringsFirstAssignment {
         if (startIndex == -1 || stopIndex == -1) {
             return "";
         }
-        if ((stopIndex + 3 - startIndex) % 3 == 0) {
+        if ((stopIndex - startIndex) % 3 == 0) {
             result = dna.substring(startIndex, stopIndex + 3);
         }
         return result;
