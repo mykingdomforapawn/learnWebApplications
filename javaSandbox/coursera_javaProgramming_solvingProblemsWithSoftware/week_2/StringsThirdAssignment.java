@@ -46,6 +46,18 @@ public class StringsThirdAssignment {
         testb = "binini";
         System.out.println("String a is " + testa + " and String b is " + testb);
         System.out.println("There are two occurences: " + twoOccurrences(testa, testb));
+
+        // testcase: a not in b
+        testa = "zoo";
+        testb = "forest";
+        System.out.println("String a is " + testa + " and String b is " + testb);
+        System.out.println("The last part: " + lastPart(testa, testb));
+
+        // testcase: a in b
+        testa = "an";
+        testb = "banana";
+        System.out.println("String a is " + testa + " and String b is " + testb);
+        System.out.println("The last part: " + lastPart(testa, testb));
     }
 
     public static void main(String[] args) {
