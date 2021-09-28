@@ -48,6 +48,12 @@ public class StringsSecondAssignment {
         System.out.println("DNA strand is " + dna_5);
         String gene_5 = findSimpleGene(dna_5, startCodon, stopCodon);
         System.out.println("Gene is " + gene_5);
+
+        // testcase: lowercase with ATG, TAA and the substring is a multiple of 3
+        String dna_6 = "gatgctataat";
+        System.out.println("DNA strand is " + dna_6);
+        String gene_6 = findSimpleGene(dna_6, startCodon, stopCodon);
+        System.out.println("Gene is " + gene_6);
     }
 
     public static void main(String[] args) {
