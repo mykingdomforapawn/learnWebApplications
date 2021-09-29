@@ -61,7 +61,7 @@ public class StringsThirdAssignment {
     }
 
     public static void main(String[] args) {
-        StringsThirdAssignment sfa = new StringsThirdAssignment();
-        sfa.testing();
+        StringsThirdAssignment sta = new StringsThirdAssignment();
+        sta.testing();
     }
 }

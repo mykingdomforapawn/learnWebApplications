@@ -57,7 +57,7 @@ public class StringsSecondAssignment {
     }
 
     public static void main(String[] args) {
-        StringsSecondAssignment sfa = new StringsSecondAssignment();
-        sfa.testFindGeneSimple();
+        StringsSecondAssignment ssa = new StringsSecondAssignment();
+        ssa.testFindGeneSimple();
     }
 }
