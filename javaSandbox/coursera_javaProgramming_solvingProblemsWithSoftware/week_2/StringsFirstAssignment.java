@@ -45,6 +45,13 @@ public class StringsFirstAssignment {
         System.out.println("DNA strand is " + dna_5);
         String gene_5 = findSimpleGene(dna_5);
         System.out.println("Gene is " + gene_5);
+
+        // testcase: practice exam
+        String dna_6 = "AAATGCCCTAACTAGATTAAGAAACC";
+        System.out.println("DNA strand is " + dna_6);
+        String gene_6 = findSimpleGene(dna_6);
+        System.out.println("Gene is " + gene_6);
+
     }
 
     public static void main(String[] args) {
