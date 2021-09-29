@@ -18,8 +18,13 @@ public class StringsFourthAssignment {
         }
     }
 
-    public void test() {
-        String url = "http://www.dukelearntoprogram.com/course2/data/manylinks.html";
+    public void testFindLinks() {
+        String url = "https://www.dukelearntoprogram.com//course2/data/manylinks.html";
         findLinks(url);
+    }
+
+    public static void main(String[] args) {
+        StringsFourthAssignment sfa = new StringsFourthAssignment();
+        sfa.testFindLinks();
     }
 }
