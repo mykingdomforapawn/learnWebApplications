@@ -72,7 +72,10 @@ public class StringsSeventhAssignment {
     }
 
     public void testCountGenes() {
-
+        String dna = "ATGTAAGATGCCCTAGT";
+        System.out.println("String: " + dna);
+        System.out.println("Number of genes: " + countGenes(dna));
+        printAllGenes(dna);
     }
 
     public static void main(String[] args) {
