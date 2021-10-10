@@ -16,12 +16,24 @@ public class StringsFifthAssignment {
         return dna.length();
     }
 
-    public void testFindLinks() {
+    public void testFindStopCodon() {
+        String dna = "xxxyyyzzzTAAxxxyyyzzzTAAxx";
 
+        int index = findStopCodon(dna, 0, "TAA");
+        System.out.println("Index = " + index);
+
+        index = findStopCodon(dna, 9, "TAA");
+        System.out.println("Index = " + index);
+
+        index = findStopCodon(dna, 1, "TAA");
+        System.out.println("Index = " + index);
+
+        index = findStopCodon(dna, 0, "TAG");
+        System.out.println("Index = " + index);
     }
 
     public static void main(String[] args) {
         StringsFifthAssignment sfa = new StringsFifthAssignment();
-        sfa.testFindLinks();
+        sfa.testFindStopCodon();
     }
 }
