@@ -52,8 +52,38 @@ public class StringsFifthAssignment {
         System.out.println("Index = " + index);
     }
 
+    public void testFindGene() {
+        String dna;
+
+        // testcase: with valid gene
+        dna = "GTTAATGTTATAGCTTAAACCTTTAAAGCAAGGCACTGAAATGCCTAGATGA";
+        System.out.println("DNA string: " + dna);
+        System.out.println("Gene: " + findGene(dna));
+
+        // testcase: no ATG
+        dna = "GTGAGCTCACTCCATAGACACAAAGGTTTGGTCCTGCCTTCTTATTAGT";
+        System.out.println("DNA string: " + dna);
+        System.out.println("Gene: " + findGene(dna));
+
+        // testcase: with one valid stop codon
+        dna = "TTTCAGTGAGCTTACACATGCAAGTATAACCGCGCGCCAGTGAAAATGCCC";
+        System.out.println("DNA string: " + dna);
+        System.out.println("Gene: " + findGene(dna));
+
+        // testcase: with multiple valid stop codons
+        dna = "TCAATGATCTAATAGTGAATTACTGACCATAAAGGAGCGGGTATCAAGCACACACCTATGT";
+        System.out.println("DNA string: " + dna);
+        System.out.println("Gene: " + findGene(dna));
+
+        // testcase: with no valid stop codons
+        dna = "AGCTCACAACACCTTGCTTAGCCACACCCATGCCACGGGATACAGCAGTGATA";
+        System.out.println("DNA string: " + dna);
+        System.out.println("Gene: " + findGene(dna));
+    }
+
     public static void main(String[] args) {
         StringsFifthAssignment sfa = new StringsFifthAssignment();
         sfa.testFindStopCodon();
+        sfa.testFindGene();
     }
 }
