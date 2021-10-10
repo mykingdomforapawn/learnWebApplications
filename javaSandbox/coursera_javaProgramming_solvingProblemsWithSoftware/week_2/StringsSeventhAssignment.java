@@ -52,4 +52,31 @@ public class StringsSeventhAssignment {
             firstIndex = dna.indexOf(gene, firstIndex) + gene.length();
         }
     }
+
+    public int countGenes(String dna) {
+        int numberOfGenes = 0;
+        int firstIndex = 0;
+
+        while (true) {
+            String gene = findGene(dna, firstIndex);
+
+            if (gene.isEmpty()) {
+                break;
+            }
+
+            numberOfGenes++;
+            firstIndex = dna.indexOf(gene, firstIndex) + gene.length();
+        }
+
+        return numberOfGenes;
+    }
+
+    public void testCountGenes() {
+
+    }
+
+    public static void main(String[] args) {
+        StringsSeventhAssignment ssa = new StringsSeventhAssignment();
+        ssa.testCountGenes();
+    }
 }
