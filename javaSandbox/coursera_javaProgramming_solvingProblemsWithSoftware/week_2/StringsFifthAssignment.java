@@ -96,6 +96,11 @@ public class StringsFifthAssignment {
         dna = "AGCTCACAACACCTTGCTTAGCCACACCCATGCCACGGGATACAGCAGTGATA";
         System.out.println("DNA string: " + dna);
         System.out.println("Gene: " + findGene(dna, 0));
+
+        // testcase: practice quiz
+        dna = "AATGCTAACTAGCTGACTAAT";
+        System.out.println("DNA string: " + dna);
+        System.out.println("Gene: " + findGene(dna, 0));
     }
 
     public void testPrintAllGenes() {
