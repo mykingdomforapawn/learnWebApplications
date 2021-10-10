@@ -16,8 +16,8 @@ public class StringsFifthAssignment {
         return dna.length();
     }
 
-    public String findGene(String dna) {
-        int startIndex = dna.indexOf("ATG");
+    public String findGene(String dna, int firstIndex) {
+        int startIndex = dna.indexOf("ATG", firstIndex);
 
         if (startIndex == -1) {
             return "";
@@ -34,6 +34,22 @@ public class StringsFifthAssignment {
         }
 
         return dna.substring(startIndex, minIndex + 3);
+    }
+
+    public void printAllGenes(String dna) {
+        int start = 0;
+
+        while (true) {
+            String gene = findGene(dna, start);
+
+            if (gene.isEmpty()) {
+                break;
+            }
+
+            System.out.println("Gene: " + gene);
+
+            start = dna.indexOf(gene, start) + gene.length();
+        }
     }
 
     public void testFindStopCodon() {
@@ -58,27 +74,27 @@ public class StringsFifthAssignment {
         // testcase: with valid gene
         dna = "GTTAATGTTATAGCTTAAACCTTTAAAGCAAGGCACTGAAATGCCTAGATGA";
         System.out.println("DNA string: " + dna);
-        System.out.println("Gene: " + findGene(dna));
+        System.out.println("Gene: " + findGene(dna, 0));
 
         // testcase: no ATG
         dna = "GTGAGCTCACTCCATAGACACAAAGGTTTGGTCCTGCCTTCTTATTAGT";
         System.out.println("DNA string: " + dna);
-        System.out.println("Gene: " + findGene(dna));
+        System.out.println("Gene: " + findGene(dna, 0));
 
         // testcase: with one valid stop codon
         dna = "TTTCAGTGAGCTTACACATGCAAGTATAACCGCGCGCCAGTGAAAATGCCC";
         System.out.println("DNA string: " + dna);
-        System.out.println("Gene: " + findGene(dna));
+        System.out.println("Gene: " + findGene(dna, 0));
 
         // testcase: with multiple valid stop codons
         dna = "TCAATGATCTAATAGTGAATTACTGACCATAAAGGAGCGGGTATCAAGCACACACCTATGT";
         System.out.println("DNA string: " + dna);
-        System.out.println("Gene: " + findGene(dna));
+        System.out.println("Gene: " + findGene(dna, 0));
 
         // testcase: with no valid stop codons
         dna = "AGCTCACAACACCTTGCTTAGCCACACCCATGCCACGGGATACAGCAGTGATA";
         System.out.println("DNA string: " + dna);
-        System.out.println("Gene: " + findGene(dna));
+        System.out.println("Gene: " + findGene(dna, 0));
     }
 
     public static void main(String[] args) {
