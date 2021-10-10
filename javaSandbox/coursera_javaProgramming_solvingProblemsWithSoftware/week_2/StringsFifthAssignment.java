@@ -37,18 +37,19 @@ public class StringsFifthAssignment {
     }
 
     public void printAllGenes(String dna) {
-        int start = 0;
+        int firstIndex = 0;
+
+        System.out.println("DNA string: " + dna);
 
         while (true) {
-            String gene = findGene(dna, start);
+            String gene = findGene(dna, firstIndex);
 
             if (gene.isEmpty()) {
                 break;
             }
 
             System.out.println("Gene: " + gene);
-
-            start = dna.indexOf(gene, start) + gene.length();
+            firstIndex = dna.indexOf(gene, firstIndex) + gene.length();
         }
     }
 
@@ -97,9 +98,15 @@ public class StringsFifthAssignment {
         System.out.println("Gene: " + findGene(dna, 0));
     }
 
+    public void testPrintAllGenes() {
+        String dna = "ATGATCTAATTTATGCTGCAACGGTGAAGA";
+        printAllGenes(dna);
+    }
+
     public static void main(String[] args) {
         StringsFifthAssignment sfa = new StringsFifthAssignment();
         sfa.testFindStopCodon();
         sfa.testFindGene();
+        sfa.testPrintAllGenes();
     }
 }
