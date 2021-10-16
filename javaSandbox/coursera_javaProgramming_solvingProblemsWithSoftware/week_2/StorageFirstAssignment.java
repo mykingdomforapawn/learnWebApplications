@@ -1,5 +1,7 @@
 package javaSandbox.coursera_javaProgramming_solvingProblemsWithSoftware.week_2;
 
+import edu.duke.StorageResource;
+
 public class StorageFirstAssignment {
 
     public int findStopCodon(String dna, int startIndex, String stopCodon) {
@@ -14,6 +16,22 @@ public class StorageFirstAssignment {
             }
         }
         return dna.length();
+    }
+
+    public void testFindStopCodon() {
+        String dna = "xxxyyyzzzTAAxxxyyyzzzTAAxx";
+
+        int index = findStopCodon(dna, 0, "TAA");
+        System.out.println("Index = " + index);
+
+        index = findStopCodon(dna, 9, "TAA");
+        System.out.println("Index = " + index);
+
+        index = findStopCodon(dna, 1, "TAA");
+        System.out.println("Index = " + index);
+
+        index = findStopCodon(dna, 0, "TAG");
+        System.out.println("Index = " + index);
     }
 
     public String findGene(String dna, int firstIndex) {
@@ -34,22 +52,6 @@ public class StorageFirstAssignment {
         }
 
         return dna.substring(startIndex, minIndex + 3);
-    }
-
-    public void testFindStopCodon() {
-        String dna = "xxxyyyzzzTAAxxxyyyzzzTAAxx";
-
-        int index = findStopCodon(dna, 0, "TAA");
-        System.out.println("Index = " + index);
-
-        index = findStopCodon(dna, 9, "TAA");
-        System.out.println("Index = " + index);
-
-        index = findStopCodon(dna, 1, "TAA");
-        System.out.println("Index = " + index);
-
-        index = findStopCodon(dna, 0, "TAG");
-        System.out.println("Index = " + index);
     }
 
     public void testFindGene() {
@@ -86,9 +88,37 @@ public class StorageFirstAssignment {
         System.out.println("Gene: " + findGene(dna, 0));
     }
 
+    public StorageResource getAllGenes(String dna) {
+        StorageResource geneList = new StorageResource();
+        int start = 0;
+
+        while (true) {
+            String currentGene = findGene(dna, start);
+
+            if (currentGene.isEmpty()) {
+                break;
+            }
+            geneList.add(currentGene);
+            start = dna.indexOf(currentGene, start) + currentGene.length();
+        }
+
+        return geneList;
+    }
+
+    public void testGetAllGenes() {
+        String dna = "ATGATCTAATTTATGCTGCAACGGTGAAGAGCTGCAACGGTGAAGAATGATCTAA";
+        StorageResource geneList = getAllGenes(dna);
+
+        System.out.println("Testing getAllGenes on " + dna);
+        for (String gene : geneList.data()) {
+            System.out.println("Gene: " + gene);
+        }
+    }
+
     public static void main(String[] args) {
         StorageFirstAssignment sfa = new StorageFirstAssignment();
         sfa.testFindStopCodon();
         sfa.testFindGene();
+        sfa.testGetAllGenes();
     }
 }
